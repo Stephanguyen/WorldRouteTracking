@@ -1,0 +1,420 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+      
+        <!--Start of slider section-->
+        <section id="slider">
+            <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div class="slider_overlay">
+                            <img src="img/img1.jpg" alt="...">
+                            <div class="carousel-caption">
+                                <div class="slider_text">
+                                    <h2>World Route Tracking</h2>
+                                    <p>Bienvenue.</p>
+                                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                        <a href="{{ path('fos_user_security_logout') }}" class="custom_btn">SE DECONNECTER</a>
+                                    {% else %}
+                                        <a href="{{ path('fos_user_security_login') }}" class="custom_btn">SE CONNECTER</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+	
+    
+
+                    <!--End of item With Active-->
+                    <div class="item">
+                        <div class="slider_overlay">
+                            <img src="img/img2.jpg" alt="...">
+                            <div class="carousel-caption">
+                                <div class="slider_text">
+                                    <h3>Lorem</h3>
+                                    <h2>consectetur adipiscing elit</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <a href="{{ path('fos_user_registration_register') }}" class="custom_btn">CRÉER UN COMPTE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <!--end of slider section-->
+
+
+
+
+
+        <!--Start of portfolio-->
+        <section id="portfolio" class="text-center">
+            <div class="col-md-12">
+                <div class="portfolio_title">
+                    <h2>Des disciplines diverses et variées</h2>
+                    <p><strong>WorldRouteTracking</strong>, c'est avant tout une aventure humaine et physique, bénifique pour votre santé</p>
+                </div>
+            </div>
+            <!--End of col-md-2-->
+            <div class="colum">
+                <div class="container">
+                    <div class="row">
+                        <form action="/">
+                            <ul id="portfolio_menu" class="menu portfolio_custom_menu">
+                                <li>
+                                    <button data-filter="*" class="my_btn btn_active">Randonnée</button>
+                                </li>
+                                <li>
+                                    <button data-filter=".blue, .black, .green" class="my_btn">Course à pied</button>
+                                </li>
+                                <li>
+                                    <button data-filter=".red, .green" class="my_btn">Cyclisme</button>
+                                </li>
+                                <li>
+                                <!--
+                                <li>
+                                    <button data-filter=".black" class="my_btn">Black</button>
+                                </li>
+                                    -->
+                            </ul>
+                            <!--End of portfolio_menu-->
+                        </form>
+                        <!--End of Form-->
+                    </div>
+                    <!--End of row-->
+                </div>
+                <!--End of container-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="notes">
+                                <div class="note blue">
+                                    <div class="img_overlay">
+                                        <p>Lorem</p>
+                                    </div>
+                                    <img src="img/homme-avec-thermos-regardant-la-camera_23-2147814270.jpg" alt="">
+                                </div>
+                                <div class="note red">
+                                    <div class="img_overlay">
+                                        <p>Lorem</p>
+                                    </div>
+                                    <img src="img/young-man-traveler-avec-sac-a-dos-relaxant-en-plein-air_1421-175.jpg" alt="">
+                                </div>
+                                <div class="note green">
+                                    <div class="img_overlay">
+                                        <p>Lorem</p>
+                                    </div>
+                                    <img src="img/souriant-touristique-avec-carte_23-2147835187.jpg" alt="">
+                                </div>
+                                <div class="note yellow">
+                                    <div class="img_overlay">
+                                        <p>Lorem</p>
+                                    </div>
+                                    <img src="img/vue-arriere-du-voyageur-asiatique-couple-avec-bacpack_34840-69.jpg" alt="">
+                                </div>
+                                <div class="note black">
+                                    <div class="img_overlay">
+                                        <p>Lorem</p>
+                                    </div>
+                                    <img src="img/jeune-homme-de-randonnee-sportif-ou-voyageur-avec-sac-a-dos-restant-et-regardant-l-39-horizon-toning_1220-1164.jpg" alt="">
+                                </div>
+                            </div>
+                            <!--End of notes-->
+                        </div>
+                        <!--End of col-lg-12-->
+                    </div>
+                    <!--End of row-->
+                </div>
+                <!--End of container-->
+            </div>
+            <!--End of colum-->
+        </section>
+        <!--end of portfolio-->
+
+
+
+        <!--Start of counter-->
+        <section id="counter">
+            <div class="counter_img_overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="counter_header">
+                                <h2>Un pas pour l'environnement</h2>
+                                <p>En participant à WorldRouteTracking, vous contribuez au financement de projets associatifs en lien à l'environnement. </p>
+                            </div>
+                        </div>
+                        <!--End of col-md-12-->
+                    </div>
+                    <!--End of row-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="counter_item text-center">
+                                <div class="sigle_counter_item">
+                                    <img src="img/tree.png" alt="">
+                                    <div class="counter_text">
+                                        <span class="counter">1542</span>
+                                        <p>arbres plantés</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="counter_item text-center">
+                                <div class="sigle_counter_item">
+                                    <img src="img/hand.png" alt="">
+                                    <div class="counter_text">
+                                        <span class="counter">1458</span>
+                                        <p>animaux sauvés</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End of row-->
+                </div>
+                <!--End of container-->
+            </div>
+        </section>
+        <!--end of counter-->
+
+
+
+        <!--start of event-->
+        <section id="event">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="event_header text-center">
+                            <h2>Des paysages magnifiques</h2>
+                            <p>En vous inscrivant à WorldRouteTracking, participez à une communauté bienveillante qui vous permettra de découvrir des lieux inoubliables.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--End of row-->
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-6 zero_mp">
+                                <div class="event_item">
+                                    <div class="event_img">
+                                        <img src="img/home_tourist_slider_bg.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 zero_mp">
+                                <div class="event_item">
+                                    <div class="event_text text-center">
+                                        <a href=""><h4>Lorem ipsum dolor sit amet</h4></a>
+                                        <h6>15 juillet 2018</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adip scing elit. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <a href="#" class="event_btn">voir</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of row-->
+                        <div class="row">
+                            <div class="col-md-6 zero_mp">
+                                <div class="event_item">
+                                    <div class="event_text text-center">
+                                        <a href="#"><h4>Lorem ipsum dolor sit amet</h4></a>
+                                        <h6>15 juillet 2018</h6>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adip scing elit. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <a href="" class="event_btn">voir</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 zero_mp">
+                                <div class="event_item">
+                                    <div class="event_img">
+                                        <img src="img/voyageur-mignon-avec-carte-et-camera_23-2147835192.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of row-->
+                    </div>
+        </section>
+        <!--end of event-->
+
+
+
+        <!--Start of testimonial-->
+        <section id="testimonial">
+            <div class="testimonial_overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="testimonial_header text-center">
+                                <h2>Témoignages des utilisateurs</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End of row-->
+                    <section id="carousel">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000">
+                                        <!-- Carousel indicators -->
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#fade-quote-carousel" data-slide-to="0" class="active"></li>
+                                            <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
+                                        </ol>
+                                        <!-- Carousel items -->
+                                        <div class="carousel-inner">
+                                            <div class="active item">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="profile-circle">
+                                                            <img src="img/homme-avec-thermos-regardant-la-camera_23-2147814270.jpg" alt="">
+                                                        </div>
+                                                        <div class="testimonial_content">
+                                                            <i class="fa fa-quote-left"></i>
+                                                            <p> Pratiquer la randonnée avec WRT m'a permis de rencontrer d'autres randonneurs. J'ai pu par la même occasion découvrir des lieux inconnus du grand public. </p>
+                                                        </div>
+                                                        <div class="testimonial_author">
+                                                            <h5>Julien</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="profile-circle">
+                                                            <img src="img/b1.jpg" alt="">
+                                                        </div>
+                                                        <div class="testimonial_content">
+                                                            <i class="fa fa-quote-left"></i>
+                                                            <p>WorlRouteTracking, ça a été pour moi l'opportunité de rencontrer des hommes et des femmes de d'horizons divers et variés. Merci WRT!</p>
+                                                        </div>
+                                                        <div class="testimonial_author">
+                                                            <h5>Kim</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--End of item with active-->
+                                            <div class="item">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="profile-circle">
+                                                            <img src="img/touriste-souriant-au-chapeau-blanc_23-2147835202.jpg" alt="">
+                                                        </div>
+                                                        <div class="testimonial_content">
+                                                            <i class="fa fa-quote-left"></i>
+                                                            <p>WorldRouteTracking, comment dire...quelle aventure! Je ne pensais pas lever le voile sur tous ces endroits sublimes...
+                                                            Un grand merci à WorldRouteTracking pour tous ces souvenirs qui resteront gravés dans ma mémoire pendant encore longtemps :)</p>
+                                                        </div>
+                                                        <div class="testimonial_author">
+                                                            <h5>Audrey</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="profile-circle">
+                                                            <img src="img/adventure-1850178_960_720.jpg" alt="">
+                                                        </div>
+                                                        <div class="testimonial_content">
+                                                            <i class="fa fa-quote-left"></i>
+                                                            <p>Avant je faisais de la boxe thaïlandaise WorldRouteTracking m'a permis de faire des nouvelles rencontre, un grand merci :D </p>
+                                                        </div>
+                                                        <div class="testimonial_author">
+                                                            <h5>Jimmy</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--ENd of item-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End of row-->
+                        </div>
+                        <!--End of container-->
+                    </section>
+                    <!--End of carousel-->
+                </div>
+            </div>
+            <!--End of container-->
+        </section>
+        <!--end of testimonial-->
+
+        <!--Start of contact-->
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="colmd-12">
+                        <div class="contact_area text-center">
+                        </div>
+                    </div>
+                </div>
+                <!--End of row-->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="office">
+                            <div class="title">
+                                <h5>Notre Adresse</h5>
+                            </div>
+                            <div class="office_location">
+                                <div class="address">
+                                    <i class="fa fa-map-marker"><span>18 Rue Geoffroy l'Asnier, 75004 Paris</span></i>
+                                </div>
+                                <div class="phone">
+                                    <i class="fa fa-phone"><span>+ 8801532-987039</span></i>
+                                </div>
+                                <div class="email">
+                                    <i class="fa fa-envelope"><span>WRT@mail.com</span></i>
+                                </div>
+                                <div id="map"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="msg">
+                            <div class="msg_title">
+                                <h5>Contactez nous</h5>
+                            </div>
+                            <div class="form_area">
+                                <!-- CONTACT FORM -->
+                                <div class="contact-form wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
+                                    <div id="message"></div>
+                                    <form action="scripts/contact.php" class="form-horizontal contact-1" role="form" name="contactform" id="contactform">
+                                        <div class="form-group">
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="name" id="name" placeholder="Nom">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <input type="subject" class="form-control" id="subject" placeholder="Subject *">
+                                                <div class="text_area">
+                                                    <textarea name="contact-message" id="msg" class="form-control" cols="30" rows="8" placeholder="Message"></textarea>
+                                                </div>
+                                                <button type="submit" class="btn custom-btn" data-loading-text="Loading...">Envoyer</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End of col-md-6-->
+                </div>
+                <!--End of row-->
+            </div>
+            <!--End of container-->
+        </section>
+        <!--End of contact-->
+
+{% endblock %}
