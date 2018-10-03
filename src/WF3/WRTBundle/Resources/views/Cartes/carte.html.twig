@@ -1,0 +1,57 @@
+{%  extends 'layout.html.twig' %}
+
+{% block title %}{{title}}{% endblock %}
+
+
+
+{% block content %}
+<h1 style="padding-top: 2%; text-align: center;">{{title}}</h1>
+     <div class="container"  style="padding-top: 2%">
+	 <table class="table table-striped table-sm">
+                <thead>
+                    <tr>
+						<th>Région</th>
+						<th>Pays</th>
+						<th>Déplacement</th>
+						<th>Kilomètres</th>
+						<th>Difficulté</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+						<td> {{ carte.region }}</td>
+						<td>{{ carte.pays }}</td>
+						<td>{{ carte.deplacement }}</td>
+						<td> {{ carte.nbKm }}</td>
+						<td>{{ carte.difficulte }}</td>
+                    </tr>
+                </tbody>
+                </table>
+			<div id="map"></div>
+		{% block javascripts %}
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjxvF9oTfcziZWw--3phPVx1ztAsyhXL4"></script>		
+		<script type="text/javascript">
+		initMap();
+			function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: {lat: 0, lng: -180},
+          mapTypeId: 'terrain'
+        });
+
+        var flightPlanCoordinates = {{ coordonnees | raw }};
+        var flightPath = new google.maps.Polyline({
+          path: flightPlanCoordinates,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
+        });
+
+        flightPath.setMap(map);
+      }
+		</script>
+		{% endblock %}
+
+	 </div>          
+{% endblock %}

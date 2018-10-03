@@ -1,0 +1,31 @@
+{%  extends 'layout.html.twig' %}
+
+{% block title %}{{title}}{% endblock %}
+
+
+{% block content %}
+	<h1>{{title}}</h1>
+			
+			{# <p class="text-center">Id Utilisateur : {{ user.id }}</p> #}
+			<p class="text-center">Pseudo : {{ user.username }}</p>
+			<p class="text-center">Email : {{ user.email }}</p>
+			<p class="text-center">Nom :{{ user.nom }}</p>
+			<p class="text-center">Prénom :{{ user.prenom }}</p>
+			<p class="text-center">Ville : {{ user.ville }}</p>
+			<p class="text-center">Région : {{ user.region }}</p>
+			<p class="text-center">Pays : {{ user.pays }}</p>
+			{# <p class="text-center">Date de naissance : {{ user.date_naissance }}</p> #}
+			<p class="text-center">Civilité : {{ user.civilite }}</p><hr><hr>
+
+			{% for ca in user.cartes %}
+			<p class="text-center">Id de la carte : {{ ca.idCartes }}</p>
+			<p class="text-center">Région : {{ ca.region }}</p>
+			<p class="text-center">Pays : {{ ca.pays }}</p>
+			{# <p class="text-center">idUtilisateur :{{ ca.idUtilisateur }}</p> #}
+			<p class="text-center">Déplacement :{{ ca.deplacement }}</p>
+			<p class="text-center">Temps (h/m/s) : {{ ca.temps }}</p>
+			<p class="text-center">nbKm : {{ ca.nbKm }}</p>
+			<p class="text-center">Difficulté : {{ ca.difficulte }}</p>
+			<p class="text-center">Matériel : {{ ca.materiel }}</p><hr>
+			{% endfor %}
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block content %}
+
+            <h1>{{ title }}</h1>
+
+           {#En version simplifiée qui génère le formulaire entièrement : {{ form(membreForm) }} #}
+
+           {# En générant le formulaire nous-même :  #}
+
+           {{ form_start(membreForm) }}
+
+                {# Si on veut afficher toutes les erreurs :  {{ form_errors(membreForm) }} #}
+
+                <div class="form-group">
+                    <label for="">
+                        {{ form_label(membreForm.pseudo) }}
+                    </label>
+                        {{ form_widget(membreForm.pseudo, {'attr' : {'class' : 'form-control', 'placeholder' : 'Votre Pseudo'}}) }}
+                        {{ form_errors(membreForm.pseudo) }}
+                    
+                </div>
+
+                <div class="form-group">
+                   <label for="">
+                        {{ form_label(membreForm.mdp) }}
+                    </label>
+                        {{ form_widget(membreForm.mdp, {'attr' : {'class' : 'form-control', 'placeholder' : 'Votre mot de passe'}}) }}
+                        {{ form_errors(membreForm.mdp) }}
+
+                </div>
+
+                <div class="form-group">
+                   <label for="">
+                        {{ form_label(membreForm.nom) }}
+                    </label>
+                        {{ form_widget(membreForm.nom, {'attr' : {'class' : 'form-control', 'placeholder' : 'Votre Nom'}}) }}
+                        {{ form_errors(membreForm.nom) }}
+
+                </div>
+
+                <div class="form-group">
+                   <label for="">
+                        {{ form_label(membreForm.prenom) }}
+                    </label>
+                        {{ form_widget(membreForm.prenom, {'attr' : {'class' : 'form-control', 'placeholder' : 'Votre Prenom'}}) }}
+                        {{ form_errors(membreForm.prenom) }}
+
+                </div>
+
+                <div class="form-group">
+                   <label for="">
+                        {{ form_label(membreForm.email) }}
+                    </label>
+                        {{ form_widget(membreForm.email, {'attr' : {'class' : 'form-control', 'placeholder' : 'Votre Email'}}) }}
+                        {{ form_errors(membreForm.email) }}
+
+                </div>
+
+                <div class="form-group">
+                   <label for="">
+                        {{ form_label(membreForm.civilite) }}
+                    </label>
+                        {{ form_widget(membreForm.civilite, {'attr' : {'class' : 'form-control'}}) }}
+                        {{ form_errors(membreForm.civilite) }}
+
+                </div>
+
+                <div class="form-group">
+                   <label for="">
+                        {{ form_label(membreForm.ville) }}
+                    </label>
+                        {{ form_widget(membreForm.ville, {'attr' : {'class' : 'form-control', 'placeholder' : 'Votre Ville'}}) }}
+                        {{ form_errors(membreForm.ville) }}
+
+                </div>
+
+                <div class="form-group">
+                   <label for="">
+                        {{ form_label(membreForm.code_postal) }}
+                    </label>
+                        {{ form_widget(membreForm.code_postal, {'attr' : {'class' : 'form-control', 'placeholder' : 'Votre Code Postal'}}) }}
+                        {{ form_errors(membreForm.code_postal) }}
+
+                </div>
+
+                <div class="form-group">
+                   <label for="">
+                        {{ form_label(membreForm.adresse) }}
+                    </label>
+                        {{ form_widget(membreForm.adresse, {'attr' : {'class' : 'form-control', 'placeholder' : 'Votre Adresse'}}) }}
+                        {{ form_errors(membreForm.adresse) }}
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_widget(membreForm.save, {'attr' : {'class' : 'btn btn-success', 'value' : 'Inscription' } }) }}
+
+                </div>
+
+
+                {{ form_rest(membreForm) }}
+                {# Il faudra toujours faire le form_rest() car il génère des jetons CSRF et GERE LA SECURITE !!!  #}
+
+           {{ form_end(membreForm) }}
+
+{% endblock %}

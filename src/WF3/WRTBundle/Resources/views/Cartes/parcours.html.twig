@@ -1,0 +1,36 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<!-- Start of main-->
+    <section>
+        <div class="container">
+            <h1 style="font-family: sans-serif; font-size: 3.5rem; text-transform: uppercase; padding-bottom: 5%;">Parcours</h1>
+            <div class="mymaps">
+                <form class="form-inline mt-2 mt-md-0" method="POST">
+                    <input type="text" name="recherche" placeholder="recherche" size="45" maxlength="100">
+                    <button type="text" name="recherche">recherche</button>
+                    <div id="resultat"></div>
+                    <select name="ville" id="ville">
+                        <option value="value1">-- --</option>
+                        <option value="value2">Londre</option>
+                        <option value="value3">Paris</option>
+                        <option value="value4">Bruxelles</option>
+                    </select>
+                    <select name="pays">
+                        <option value="value1">Type de parcours</option>
+                        <option value="value2">randonnée</option>
+                        <option value="value3">course</option>
+                        <option value="value4">vélo</option>
+                    </select>
+                    <div id="resultat"></div>
+                    <select name="ville" id="ville">
+                        
+                    </select>
+                        <input type="submit" value="ok" id="submit">
+                    <div id="map"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!--End of main-->
+{% endblock %}

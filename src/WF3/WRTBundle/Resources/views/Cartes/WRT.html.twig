@@ -1,0 +1,61 @@
+{# {% extends 'layout.html.twig' %} #}
+
+{# {% block title %} {{ title }} {% endblock %} #}
+
+{% block content %}
+
+		<div class="row row-offcanvas row-offcanvas-right">
+		  <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+			<div class="list-group">
+			<p class="list-group-item active text-center">DETAILS</p>
+	
+			{# {% for pay in pays %}
+				<a href="{{ path('WRT', {'pays' : pay.pays} ) }}" class="list-group-item">{{ pay.pays }}</a>
+			{% endfor %} #}
+			
+			</div>
+		  </div>
+		  <!--/.sidebar-offcanvas-->
+		  <div class="col-xs-12 col-sm-9">
+			<p class="pull-right visible-xs">
+			  <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+			</p>
+			<div class="jumbotron">
+			  <h1>Affichage des cartes</h1>
+			</div>
+			
+				
+				
+		{# {% for carte in cartes %}
+			<!-- afficher pour chaque carte : la photo, le prix et un lien permettant d'envoyer vers la fiche carte -->
+			<!--<div class="row"> -->
+			  <div class="col-xs-6 col-lg-4">
+			  <div class="panel-default border">
+				<div class="panel-heading text-center"><h2>{{ carte.ville }}</h2></div>
+				
+				{# <p>
+						<a href="{{ path('carte', {'id' : carte.id }) }}">
+								<img src="{{ asset('/photo/' ~ carte.photo) }}" alt="" class="img-responsive">
+						</a>
+				</p> #}
+				{# <p class="text-center">{{ carte.prix }}€</p> #}
+				<p class="text-center"><a class="btn btn-primary" href="{{ path('carte', {'id' : carte.id_carte }) }}" role="button">Voir les détails &raquo;</a></p>
+			  </div> 	
+			  </div>
+			  <!--/.col-xs-6.col-lg-4-->
+			<!-- </div> -->
+			<!--/row-->
+	
+		
+		
+		
+		
+		
+			
+		  </div>
+		  <!--/.col-xs-12.col-sm-9-->
+		</div>
+		<!--/row-->
+
+
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Ajout d'une base de données{% endblock %}
+
+{% block content %}
+
+            <h1>{{ title }}</h1>
+
+           {#En version simplifiée qui génère le formulaire entièrement : {{ form(cartesForm) }} #}
+
+           {# En générant le formulaire nous-même :  #}
+
+           {{ form_start(cartesForm) }}
+
+                {% if form_errors(cartesForm) %}
+                    <div class= "alert alert-danger">{{ form_errors(cartesForm) }} 
+                    </div>
+                {% endif %}
+
+                {# Si on veut afficher toutes les erreurs :  {{ form_errors(cartesForm) }} #}
+
+                <div class="form-group">
+                    <label for="">
+                        {{ form_label(cartesForm.ville) }}
+                    </label>
+                        {{ form_widget(cartesForm.ville, {'attr' : {'class' : 'form-control', 'placeholder' : 'Votre Ville'}}) }}
+                        {{ form_errors(cartesForm.ville) }}
+                    
+                </div>
+
+                <div class="form-group">
+                    <label for="">
+                        {{ form_label(cartesForm.region) }}
+                    </label>
+                        {{ form_widget(cartesForm.region, {'attr' : {'class' : 'form-control', 'placeholder' : 'Votre Région'}}) }}
+                        {{ form_errors(cartesForm.region) }}
+                    
+                </div>
+
+                <div class="form-group">
+                   <label for="">
+                        {{ form_label(cartesForm.pays) }}
+                    </label>
+                        {{ form_widget(cartesForm.pays, {'attr' : {'class' : 'form-control', 'placeholder' : 'Votre Pays'}}) }}
+                        {{ form_errors(cartesForm.pays) }}
+
+                </div>
+
+                <div class="form-group">
+                   <label for="">
+                        {{ form_label(cartesForm.id_utilisateur) }}
+                    </label>
+                        {{ form_widget(cartesForm.id_utilisateur, {'attr' : {'class' : 'form-control', 'placeholder' : 'Votre Id_utilisateur'}}) }}
+                        {{ form_errors(cartesForm.id_utilisateur) }}
+
+                </div>
+
+                <div class="form-group">
+                   <label for="">
+                        {{ form_label(cartesForm.deplacement) }}
+                    </label>
+                        {{ form_widget(cartesForm.deplacement, {'attr' : {'class' : 'form-control', 'placeholder' : 'Votre Deplacement'}}) }}
+                        {{ form_errors(cartesForm.deplacement) }}
+
+                </div>
+
+                <div class="form-group">
+                   <label for="">
+                        {{ form_label(cartesForm.temps) }}
+                    </label>
+                        {{ form_widget(cartesForm.temps, {'attr' : {'class' : 'form-control', 'placeholder' : 'Votre Temps'}}) }}
+                        {{ form_errors(cartesForm.temps) }}
+
+                </div>
+
+                <div class="form-group">
+                   <label for="">
+                        {{ form_label(cartesForm.nb_km) }}
+                    </label>
+                        {{ form_widget(cartesForm.nb_km, {'attr' : {'class' : 'form-control', 'placeholder' : 'Votre Nombre de Kilomètres'}}) }}
+                        {{ form_errors(cartesForm.nb_km) }}
+
+                </div>
+
+                <div class="form-group">
+                   <label for="">
+                        {{ form_label(cartesForm.difficulte) }}
+                    </label>
+                        {{ form_widget(cartesForm.difficulte, {'attr' : {'class' : 'form-control'}}) }}
+                        {{ form_errors(cartesForm.difficulte) }}
+
+                </div>
+
+                <div class="form-group">
+                   <label for="">
+                        {{ form_label(cartesForm.materiel) }}
+                    </label>
+                        {{ form_widget(cartesForm.materiel, {'attr' : {'class' : 'form-control', 'placeholder' : 'Votre Materiel'}}) }}
+                        {{ form_errors(cartesForm.materiel) }}
+
+                </div>
+
+                <div class="form-group">
+                    {{ form_widget(cartesForm.save, {'attr' : {'class' : 'btn btn-success', 'value' : 'Inscription' } }) }}
+
+                </div>
+
+
+                {{ form_rest(cartesForm) }}
+                {# Il faudra toujours faire le form_rest() car il génère des jetons CSRF et GERE LA SECURITE !!!  #}
+
+           {{ form_end(cartesForm) }}
+
+{% endblock %}
